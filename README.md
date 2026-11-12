@@ -26,10 +26,13 @@ For real AI analysis, configure your own Gemini key using the full README inside
 
 ## Verified status
 
+These results include verification completed after the v6 release. The source ZIP remains the exact deployed commit and has not been changed.
+
 - Real Gemini-backed English and Korean quotes were generated and saved in the hosted app.
 - A separate live-Gemini integration check verified a **$450** base quote and **$242.50** scope-change result.
 - **34 automated tests passed**, including local HTTP access restrictions and persistence across restarts. Payment responses in automated tests are mocked.
-- PayPal Sandbox order creation worked and a U.S. test buyer was created. **Base and change-order captures remain unverified.** No real-money payment flow is included.
+- **The complete hosted flow was verified on 12 November 2026:** Gemini quote → **$450** PayPal Sandbox base capture → Gemini change analysis → separate **$242.50** Sandbox change capture → reload/restoration of both paid states. The extra work was a vertical version ($105), Korean captions ($50), and rush delivery ($87.50). No real money moved.
+- Cancellation and simultaneous duplicate-request scenarios have automated-test coverage; they were not live-browser tested.
 - Local HTTP tests passed; local browser UI verification is still pending. The hosted development site remains owner-private.
 
 This is a hackathon prototype. Approval records the operator's action; separate client identities and signed contracts are not implemented.
